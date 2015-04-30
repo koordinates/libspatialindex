@@ -630,8 +630,7 @@ SIDX_C_DLL RTError Index_Intersects_obj(  IndexH index,
 	ObjVisitor* visitor = new ObjVisitor;
 	try {
     SpatialIndex::Region* r = new SpatialIndex::Region(pdMin, pdMax, nDimension);
-		idx->index().intersectsWithQuery(	*r,
-											*visitor);
+		idx->index().intersectsWithQuery(*r, *visitor);
 
     Page_ResultSet_Obj(*visitor, items, nStart, nResultLimit, nResults);
 
@@ -924,7 +923,7 @@ SIDX_C_DLL RTError Index_Intersects_count(	  IndexH index,
 	CountVisitor* visitor = new CountVisitor;
 	try {
     SpatialIndex::Region* r = new SpatialIndex::Region(pdMin, pdMax, nDimension);
-		idx->index().intersectsWithQuery(	*r,
+		idx->index().countIntersectsWithQuery(	*r,
 											*visitor);
 
 		*nResults = visitor->GetResultCount();
@@ -1067,7 +1066,7 @@ SIDX_C_DLL RTError Index_SegmentIntersects_count(	  IndexH index,
 	CountVisitor* visitor = new CountVisitor;
 	try {
         SpatialIndex::LineSegment* l = new SpatialIndex::LineSegment(pdStartPoint, pdEndPoint, nDimension);
-		idx->index().intersectsWithQuery(	*l,
+		idx->index().countIntersectsWithQuery(	*l,
 											*visitor);
 
 		*nResults = visitor->GetResultCount();

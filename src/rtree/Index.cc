@@ -130,17 +130,27 @@ void Index::split(uint32_t dataLength, byte* pData, Region& mbr, id_type id, Nod
 	ptrLeft->m_nodeMBR = m_pTree->m_infiniteRegion;
 	ptrRight->m_nodeMBR = m_pTree->m_infiniteRegion;
 
+	ptrLeft->m_leafDataCount = (size_t)0;
+	ptrRight->m_leafDataCount = (size_t)0;
+
 	uint32_t cIndex;
+	NodePtr ptrC;
 
 	for (cIndex = 0; cIndex < g1.size(); ++cIndex)
 	{
+		ptrC = m_pTree->readNode(m_pIdentifier[g1[cIndex]]);
+		ptrLeft->m_leafDataCount += ptrC->m_leafDataCount;
 		ptrLeft->insertEntry(0, 0, *(m_ptrMBR[g1[cIndex]]), m_pIdentifier[g1[cIndex]]);
 	}
+	m_pTree->writeNode(ptrLeft.get());
 
 	for (cIndex = 0; cIndex < g2.size(); ++cIndex)
 	{
+		ptrC = m_pTree->readNode(m_pIdentifier[g2[cIndex]]);
+		ptrRight->m_leafDataCount += ptrC->m_leafDataCount;
 		ptrRight->insertEntry(0, 0, *(m_ptrMBR[g2[cIndex]]), m_pIdentifier[g2[cIndex]]);
 	}
+	m_pTree->writeNode(ptrRight.get());
 }
 
 uint32_t Index::findLeastEnlargement(const Region& r) const
@@ -280,6 +290,22 @@ uint32_t Index::findLeastOverlap(const Region& r) const
 	return ret;
 }
 
+void Index::updateLeafDataCount(std::stack<id_type>& pathBuffer, int change)
+{
+	m_leafDataCount += change;
+	m_pTree->writeNode(this);
+	if (! pathBuffer.empty())
+	{
+		id_type cParent = pathBuffer.top(); pathBuffer.pop();
+		NodePtr ptrN = m_pTree->readNode(cParent);
+		Index* p = static_cast<Index*>(ptrN.get());
+		p->updateLeafDataCount(pathBuffer, change);
+
+		// pathBuffer is usually needed by adjustTree after this, so leave it intact
+		pathBuffer.push(cParent);
+	}
+}
+
 void Index::adjustTree(Node* n, std::stack<id_type>& pathBuffer)
 {
 	++(m_pTree->m_stats.m_u64Adjustments);
@@ -314,7 +340,6 @@ void Index::adjustTree(Node* n, std::stack<id_type>& pathBuffer)
 			}
 		}
 	}
-
 	m_pTree->writeNode(this);
 
 	if (bRecompute && (! pathBuffer.empty()))
@@ -376,4 +401,20 @@ void Index::adjustTree(Node* n1, Node* n2, std::stack<id_type>& pathBuffer, byte
 		Index* p = static_cast<Index*>(ptrN.get());
 		p->adjustTree(this, pathBuffer);
 	}
+}
+
+void Index::printTreeStructure(std::string path) const
+{
+    std::cout << path << "/" << m_identifier << " node (" << m_leafDataCount << " descendents, " << m_children << " children) MBR=" << m_nodeMBR << "\n";
+    
+	for (size_t cChild = 0; cChild < m_children; cChild++)
+	{
+        std::cout << "child mbr: " << *(m_ptrMBR[cChild]) << "\n";
+        
+        std::stringstream s;
+        s << path << "/" << m_identifier;
+        
+        NodePtr c = m_pTree->readNode(m_pIdentifier[cChild]);
+        c->printTreeStructure(s.str());
+    }
 }

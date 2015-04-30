@@ -243,6 +243,17 @@ bool Node::isIndex() const
 	return (m_level != 0);
 }
 
+size_t Node::getLeafDataCount() const
+{
+    // not implemented!
+	return -1;
+}
+
+void Node::printTreeStructure(std::string path) const
+{
+    // not implemented!
+}
+
 //
 // Internal
 //

@@ -348,6 +348,16 @@ void SpatialIndex::TPRTree::TPRTree::intersectsWithQuery(const IShape& query, IV
 	rangeQuery(IntersectionQuery, query, v);
 }
 
+void SpatialIndex::TPRTree::TPRTree::countContainsWhatQuery(const IShape& query, IVisitor& v)
+{
+	throw Tools::IllegalStateException("countContainsWhatQuery: not implemented yet.");
+}
+
+void SpatialIndex::TPRTree::TPRTree::countIntersectsWithQuery(const IShape& query, IVisitor& v)
+{
+	throw Tools::IllegalStateException("countIntersectsWithQuery: not implemented yet.");
+}
+
 void SpatialIndex::TPRTree::TPRTree::pointLocationQuery(const Point& query, IVisitor& v)
 {
 	if (query.m_dimension != m_dimension) throw Tools::IllegalArgumentException("pointLocationQuery: Shape has the wrong number of dimensions.");
@@ -591,6 +601,11 @@ bool SpatialIndex::TPRTree::TPRTree::isIndexValid()
 void SpatialIndex::TPRTree::TPRTree::getStatistics(IStatistics** out) const
 {
 	*out = new Statistics(m_stats);
+}
+
+void SpatialIndex::TPRTree::TPRTree::printTreeStructure()
+{
+	throw Tools::IllegalStateException("printTreeStructure: not implemented yet."); 
 }
 
 void SpatialIndex::TPRTree::TPRTree::initNew(Tools::PropertySet& ps)

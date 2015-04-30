@@ -92,6 +92,9 @@ void Leaf::split(uint32_t dataLength, byte* pData, Region& mbr, id_type id, Node
 	pLeft->m_nodeMBR = m_pTree->m_infiniteRegion;
 	pRight->m_nodeMBR = m_pTree->m_infiniteRegion;
 
+	pLeft->m_leafDataCount = g1.size();
+	pRight->m_leafDataCount = g2.size();
+
 	uint32_t cIndex;
 
 	for (cIndex = 0; cIndex < g1.size(); ++cIndex)
@@ -143,4 +146,13 @@ void Leaf::deleteData(id_type id, std::stack<id_type>& pathBuffer)
 		}
 		if (n.get() == this) n.relinquish();
 	}
+}
+
+void Leaf::printTreeStructure(std::string path) const
+{
+    std::cout << path << "/" << m_identifier << " leaf (" << m_leafDataCount << " descendents, " << m_children << " children) MBR=" << m_nodeMBR << "\n";
+    for (int i=0; i < m_children; i++)
+    {
+        std::cout << path << "/" << m_identifier << "-" << m_pIdentifier[i] << " MBR=" << *(m_ptrMBR[i]) << "\n";
+    }
 }

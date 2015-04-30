@@ -37,9 +37,9 @@ CountVisitor::~CountVisitor()
 
 }
 
-void CountVisitor::visitNode(const SpatialIndex::INode& )
+void CountVisitor::visitNode(const SpatialIndex::INode& n)
 {
-
+   nResults += n.getLeafDataCount();
 }
 
 void CountVisitor::visitData(const SpatialIndex::IData& )

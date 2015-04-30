@@ -28,6 +28,7 @@
 #pragma once
 
 #include <cstring>
+#include <cstdlib>
 
 using namespace SpatialIndex;
 using namespace SpatialIndex::StorageManager;
