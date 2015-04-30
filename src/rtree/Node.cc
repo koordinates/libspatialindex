@@ -55,6 +55,7 @@ uint32_t Node::getByteArraySize()
 		(sizeof(uint32_t) +
 		sizeof(uint32_t) +
 		sizeof(uint32_t) +
+		sizeof(uint32_t) +
 		(m_children * (m_pTree->m_dimension * sizeof(double) * 2 + sizeof(id_type) + sizeof(uint32_t))) +
 		m_totalDataLength +
 		(2 * m_pTree->m_dimension * sizeof(double)));
@@ -71,6 +72,9 @@ void Node::loadFromByteArray(const byte* ptr)
 	ptr += sizeof(uint32_t);
 
 	memcpy(&m_children, ptr, sizeof(uint32_t));
+	ptr += sizeof(uint32_t);
+
+	memcpy(&m_leafDataCount, ptr, sizeof(uint32_t));
 	ptr += sizeof(uint32_t);
 
 	for (uint32_t u32Child = 0; u32Child < m_children; ++u32Child)
@@ -128,6 +132,9 @@ void Node::storeToByteArray(byte** data, uint32_t& len)
 	ptr += sizeof(uint32_t);
 
 	memcpy(ptr, &m_children, sizeof(uint32_t));
+	ptr += sizeof(uint32_t);
+
+	memcpy(ptr, &m_leafDataCount, sizeof(uint32_t));
 	ptr += sizeof(uint32_t);
 
 	for (uint32_t u32Child = 0; u32Child < m_children; ++u32Child)
@@ -223,6 +230,28 @@ bool Node::isIndex() const
 	return (m_level != 0);
 }
 
+size_t Node::getLeafDataCount() const
+{
+	return m_leafDataCount;
+}
+
+void Node::printTreeStructure(std::string path) const
+{
+    std::cout << path << "/" << m_identifier << " node (" << m_leafDataCount << " descendents, " << m_children << " children) MBR=" << m_nodeMBR << "\n";
+    
+	for (size_t cChild = 0; cChild < m_children; cChild++)
+	{
+        std::cout << "child mbr: " << *(m_ptrMBR[cChild]) << "\n";
+        
+        std::stringstream s;
+        s << path << "/" << m_identifier;
+        
+        NodePtr c = m_pTree->readNode(m_pIdentifier[cChild]);
+        c->printTreeStructure(s.str());
+    }
+}
+
+
 //
 // Internal
 //
@@ -237,7 +266,8 @@ Node::Node() :
 	m_ptrMBR(0),
 	m_pIdentifier(0),
 	m_pDataLength(0),
-	m_totalDataLength(0)
+	m_totalDataLength(0),
+	m_leafDataCount(0)
 {
 }
 
@@ -251,7 +281,8 @@ Node::Node(SpatialIndex::RTree::RTree* pTree, id_type id, uint32_t level, uint32
 	m_ptrMBR(0),
 	m_pIdentifier(0),
 	m_pDataLength(0),
-	m_totalDataLength(0)
+	m_totalDataLength(0),
+	m_leafDataCount(0)
 {
 	m_nodeMBR.makeInfinite(m_pTree->m_dimension);
 
@@ -354,6 +385,11 @@ void Node::deleteEntry(uint32_t index)
 
 bool Node::insertData(uint32_t dataLength, byte* pData, Region& mbr, id_type id, std::stack<id_type>& pathBuffer, byte* overflowTable)
 {
+	int countChange = 1;
+	if (m_level != 0){
+		NodePtr c = m_pTree->readNode(id);
+		countChange = c->m_leafDataCount;
+	}
 	if (m_children < m_capacity)
 	{
 		bool adjusted = false;
@@ -362,14 +398,19 @@ bool Node::insertData(uint32_t dataLength, byte* pData, Region& mbr, id_type id,
 		bool b = m_nodeMBR.containsRegion(mbr);
 
 		insertEntry(dataLength, pData, mbr, id);
+		m_leafDataCount += countChange;
 		m_pTree->writeNode(this);
 
-		if ((! b) && (! pathBuffer.empty()))
+		if (! pathBuffer.empty())
 		{
 			id_type cParent = pathBuffer.top(); pathBuffer.pop();
 			NodePtr ptrN = m_pTree->readNode(cParent);
 			Index* p = static_cast<Index*>(ptrN.get());
+			p->updateLeafDataCount(pathBuffer, countChange);
+			if (! b)
+			{
 			p->adjustTree(this, pathBuffer);
+			}
 			adjusted = true;
 		}
 
@@ -449,6 +490,18 @@ bool Node::insertData(uint32_t dataLength, byte* pData, Region& mbr, id_type id,
 		m_children = lKeep;
 		m_totalDataLength = 0;
 
+		size_t originalCount = m_leafDataCount;
+		if (m_level == 0) {
+			m_leafDataCount = lKeep;
+		} else {
+			m_leafDataCount = 0;
+			for (cIndex = 0; cIndex < lKeep; cIndex++)
+			{
+				NodePtr c = m_pTree->readNode(keepid[cIndex]);
+				m_leafDataCount += c->m_leafDataCount;
+			}
+		}
+
 		for (uint32_t u32Child = 0; u32Child < m_children; ++u32Child) m_totalDataLength += m_pDataLength[u32Child];
 
 		for (uint32_t cDim = 0; cDim < m_nodeMBR.m_dimension; ++cDim)
@@ -471,6 +524,7 @@ bool Node::insertData(uint32_t dataLength, byte* pData, Region& mbr, id_type id,
 		id_type cParent = pathBuffer.top(); pathBuffer.pop();
 		NodePtr ptrN = m_pTree->readNode(cParent);
 		Index* p = static_cast<Index*>(ptrN.get());
+		p->updateLeafDataCount(pathBuffer, m_leafDataCount - originalCount);
 		p->adjustTree(this, pathBuffer);
 
 		for (cIndex = 0; cIndex < lReinsert; ++cIndex)
@@ -516,6 +570,8 @@ bool Node::insertData(uint32_t dataLength, byte* pData, Region& mbr, id_type id,
 				ptrR->m_nodeMBR = m_pTree->m_infiniteRegion;
 			}
 
+            ptrR->m_leafDataCount = n->m_leafDataCount + nn->m_leafDataCount;
+
 			ptrR->insertEntry(0, 0, n->m_nodeMBR, n->m_identifier);
 			ptrR->insertEntry(0, 0, nn->m_nodeMBR, nn->m_identifier);
 
@@ -538,6 +594,7 @@ bool Node::insertData(uint32_t dataLength, byte* pData, Region& mbr, id_type id,
 			id_type cParent = pathBuffer.top(); pathBuffer.pop();
 			NodePtr ptrN = m_pTree->readNode(cParent);
 			Index* p = static_cast<Index*>(ptrN.get());
+			p->updateLeafDataCount(pathBuffer, countChange - nn->m_leafDataCount);
 			p->adjustTree(n.get(), nn.get(), pathBuffer, overflowTable);
 		}
 
@@ -1048,6 +1105,7 @@ void Node::condenseTree(std::stack<NodePtr>& toReinsert, std::stack<id_type>& pa
 			// used space less than the minimum
 			// 1. eliminate node entry from the parent. deleteEntry will fix the parent's MBR.
 			p->deleteEntry(child);
+			p->updateLeafDataCount(pathBuffer, -1);
 			// 2. add this node to the stack in order to reinsert its entries.
 			toReinsert.push(ptrThis);
 		}

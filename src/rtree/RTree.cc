@@ -510,6 +510,18 @@ void SpatialIndex::RTree::RTree::intersectsWithQuery(const IShape& query, IVisit
 	rangeQuery(IntersectionQuery, query, v);
 }
 
+void SpatialIndex::RTree::RTree::countContainsWhatQuery(const IShape& query, IVisitor& v)
+{
+	if (query.getDimension() != m_dimension) throw Tools::IllegalArgumentException("countContainsWhatQuery: Shape has the wrong number of dimensions.");
+	countQuery(ContainmentQuery, query, v);
+}
+
+void SpatialIndex::RTree::RTree::countIntersectsWithQuery(const IShape& query, IVisitor& v)
+{
+	if (query.getDimension() != m_dimension) throw Tools::IllegalArgumentException("countIntersectsWithQuery: Shape has the wrong number of dimensions.");
+	countQuery(IntersectionQuery, query, v);
+}
+
 void SpatialIndex::RTree::RTree::pointLocationQuery(const Point& query, IVisitor& v)
 {
 	if (query.m_dimension != m_dimension) throw Tools::IllegalArgumentException("pointLocationQuery: Shape has the wrong number of dimensions.");
@@ -807,6 +819,12 @@ bool SpatialIndex::RTree::RTree::isIndexValid()
 void SpatialIndex::RTree::RTree::getStatistics(IStatistics** out) const
 {
 	*out = new Statistics(m_stats);
+}
+
+void SpatialIndex::RTree::RTree::printTreeStructure()
+{
+    NodePtr root = readNode(m_rootID);
+    root->printTreeStructure("");
 }
 
 void SpatialIndex::RTree::RTree::initNew(Tools::PropertySet& ps)
@@ -1435,6 +1453,63 @@ void SpatialIndex::RTree::RTree::rangeQuery(RangeQueryType type, const IShape& q
 				if (query.intersectsShape(*(n->m_ptrMBR[cChild]))) st.push(readNode(n->m_pIdentifier[cChild]));
 			}
 		}
+	}
+}
+
+void SpatialIndex::RTree::RTree::countQuery(RangeQueryType type, const IShape& query, IVisitor& v)
+{
+#ifdef HAVE_PTHREAD_H
+	Tools::LockGuard lock(&m_lock);
+#endif
+	try
+	{
+		std::stack<NodePtr> st;
+		NodePtr root = readNode(m_rootID);
+
+		if (root->m_children > 0 && query.intersectsShape(root->m_nodeMBR)) st.push(root);
+
+		while (! st.empty())
+		{
+			NodePtr n = st.top(); st.pop();
+			
+			if (query.containsShape(n->m_nodeMBR))
+			{
+				v.visitNode(*n);
+				m_stats.m_u64QueryResults += n->m_leafDataCount;
+				continue;
+			}
+
+			if (n->m_level == 0)
+			{	   
+				for (size_t cChild = 0; cChild < n->m_children; cChild++)
+				{
+					bool b;
+					if (type == ContainmentQuery) b = query.containsShape(*(n->m_ptrMBR[cChild]));
+					else b = query.intersectsShape(*(n->m_ptrMBR[cChild]));
+
+					if (b)
+					{
+						Data data = Data(n->m_pDataLength[cChild], n->m_pData[cChild], *(n->m_ptrMBR[cChild]), n->m_pIdentifier[cChild]);
+						v.visitData(data);
+						m_stats.m_u64QueryResults++;
+					}
+				}
+			}
+			else
+			{
+				for (size_t cChild = 0; cChild < n->m_children; cChild++)
+				{
+					if (query.intersectsShape(*(n->m_ptrMBR[cChild]))) {
+                        st.push(readNode(n->m_pIdentifier[cChild]));
+                    }
+				}
+			}
+		}
+
+	}
+	catch (...)
+	{
+		throw;
 	}
 }
 

@@ -35,6 +35,7 @@ namespace SpatialIndex
 		{
 		public:
 			virtual ~Index();
+			void printTreeStructure(std::string path) const;
 
 		protected:
 			Index(RTree* pTree, id_type id, uint32_t level);
@@ -47,6 +48,7 @@ namespace SpatialIndex
 			uint32_t findLeastEnlargement(const Region&) const;
 			uint32_t findLeastOverlap(const Region&) const;
 
+			void updateLeafDataCount(std::stack<id_type>&, int);
 			void adjustTree(Node*, std::stack<id_type>&);
 			void adjustTree(Node*, Node*, std::stack<id_type>&, byte* overflowTable);
 

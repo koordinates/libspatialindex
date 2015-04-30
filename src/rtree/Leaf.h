@@ -35,6 +35,7 @@ namespace SpatialIndex
 		{
 		public:
 			virtual ~Leaf();
+			void printTreeStructure(std::string path) const;
 
 		protected:
 			Leaf(RTree* pTree, id_type id);
