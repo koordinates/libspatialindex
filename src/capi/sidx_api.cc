@@ -630,8 +630,7 @@ SIDX_C_DLL RTError Index_Intersects_obj(  IndexH index,
 	ObjVisitor* visitor = new ObjVisitor;
 	try {
     SpatialIndex::Region* r = new SpatialIndex::Region(pdMin, pdMax, nDimension);
-		idx->index().intersectsWithQuery(	*r,
-											*visitor);
+		idx->index().countIntersectsWithQuery(*r, *visitor);
 
     Page_ResultSet_Obj(*visitor, items, nStart, nResultLimit, nResults);
 

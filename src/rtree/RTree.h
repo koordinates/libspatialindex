@@ -71,6 +71,8 @@ namespace SpatialIndex
 			virtual bool deleteData(const IShape& shape, id_type id);
 			virtual void containsWhatQuery(const IShape& query, IVisitor& v);
 			virtual void intersectsWithQuery(const IShape& query, IVisitor& v);
+			virtual void countContainsWhatQuery(const IShape& query, IVisitor& v);
+			virtual void countIntersectsWithQuery(const IShape& query, IVisitor& v);
 			virtual void pointLocationQuery(const Point& query, IVisitor& v);
 			virtual void nearestNeighborQuery(uint32_t k, const IShape& query, IVisitor& v, INearestNeighborComparator&);
 			virtual void nearestNeighborQuery(uint32_t k, const IShape& query, IVisitor& v);
@@ -80,6 +82,7 @@ namespace SpatialIndex
 			virtual void addCommand(ICommand* pCommand, CommandType ct);
 			virtual bool isIndexValid();
 			virtual void getStatistics(IStatistics** out) const;
+			virtual void printTreeStructure();
 
 		private:
 			void initNew(Tools::PropertySet&);
@@ -95,6 +98,7 @@ namespace SpatialIndex
 			NodePtr readNode(id_type page);
 			void deleteNode(Node*);
 
+			void countQuery(RangeQueryType type, const IShape& query, IVisitor& v);
 			void rangeQuery(RangeQueryType type, const IShape& query, IVisitor& v);
 			void selfJoinQuery(id_type id1, id_type id2, const Region& r, IVisitor& vis);
             void visitSubTree(NodePtr subTree, IVisitor& v);

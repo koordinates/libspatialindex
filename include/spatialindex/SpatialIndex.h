@@ -113,6 +113,8 @@ namespace SpatialIndex
 	class SIDX_DLL INode : public IEntry, public Tools::ISerializable
 	{
 	public:
+		virtual size_t getLeafDataCount() const = 0;
+		virtual void printTreeStructure(std::string path) const = 0;
 		virtual uint32_t getChildrenCount() const = 0;
 		virtual id_type getChildIdentifier(uint32_t index) const = 0;
 		virtual void getChildData(uint32_t index, uint32_t& len, byte** data) const = 0;
@@ -194,7 +196,9 @@ namespace SpatialIndex
 		virtual void insertData(uint32_t len, const byte* pData, const IShape& shape, id_type shapeIdentifier) = 0;
 		virtual bool deleteData(const IShape& shape, id_type shapeIdentifier) = 0;
 		virtual void containsWhatQuery(const IShape& query, IVisitor& v)  = 0;
+		virtual void countContainsWhatQuery(const IShape& query, IVisitor& v) = 0;
 		virtual void intersectsWithQuery(const IShape& query, IVisitor& v) = 0;
+		virtual void countIntersectsWithQuery(const IShape& query, IVisitor& v) = 0;
 		virtual void pointLocationQuery(const Point& query, IVisitor& v) = 0;
 		virtual void nearestNeighborQuery(uint32_t k, const IShape& query, IVisitor& v, INearestNeighborComparator& nnc) = 0;
 		virtual void nearestNeighborQuery(uint32_t k, const IShape& query, IVisitor& v) = 0;
@@ -204,6 +208,7 @@ namespace SpatialIndex
 		virtual void addCommand(ICommand* in, CommandType ct) = 0;
 		virtual bool isIndexValid() = 0;
 		virtual void getStatistics(IStatistics** out) const = 0;
+		virtual void printTreeStructure() = 0;
 		virtual ~ISpatialIndex() {}
 
 	}; // ISpatialIndex

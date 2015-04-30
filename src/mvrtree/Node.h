@@ -71,6 +71,8 @@ namespace SpatialIndex
 			virtual uint32_t getLevel() const;
 			virtual bool isIndex() const;
 			virtual bool isLeaf() const;
+			virtual size_t getLeafDataCount() const;
+			virtual void printTreeStructure(std::string path) const;
 
 		private:
 			Node();
