@@ -20,10 +20,8 @@ Section: libs
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Breaks: libspatialindex4 (<< 1.8.5-2),
-        libspatialindex1
-Replaces: libspatialindex4 (<< 1.8.5-2),
-          libspatialindex1
+Breaks: libspatialindex4 (<< 1.8.5-2)
+Replaces: libspatialindex4 (<< 1.8.5-2)
 Description: General framework for developing spatial indices
  Spatialindex is a C++ library that provides a framework for
  developing spatial indices. Currently it defines generic interfaces,
