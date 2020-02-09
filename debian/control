@@ -1,0 +1,84 @@
+Source: spatialindex
+Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
+Uploaders: Francesco Paolo Lovergine <frankie@debian.org>,
+           Bas Couwenberg <sebastic@debian.org>
+Section: science
+Priority: optional
+Build-Depends: debhelper (>= 9),
+               autotools-dev,
+               dh-autoreconf,
+               pkg-kde-tools
+Standards-Version: 4.0.0
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-grass/libspatialindex.git
+Vcs-Git: https://anonscm.debian.org/git/pkg-grass/libspatialindex.git
+Homepage: http://libspatialindex.github.io/
+
+Package: libspatialindex4v5
+Architecture: any
+Multi-Arch: same
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Breaks: libspatialindex4 (<< 1.8.5-2)
+Replaces: libspatialindex4 (<< 1.8.5-2)
+Description: General framework for developing spatial indices
+ Spatialindex is a C++ library that provides a framework for
+ developing spatial indices. Currently it defines generic interfaces,
+ provides simple main memory and disk based storage managers and a
+ robust implementation of an R*-tree, an MVR-tree and a TPR-tree.
+ .
+ This package contains the SpatialIndex shared library.
+
+Package: libspatialindex-c4v5
+Architecture: any
+Multi-Arch: same
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Breaks: libspatialindex-c4 (<< 1.8.5-2)
+Replaces: libspatialindex-c4 (<< 1.8.5-2)
+Description: General framework for developing spatial indices - C library
+ Spatialindex is a C++ library that provides a framework for
+ developing spatial indices. Currently it defines generic interfaces,
+ provides simple main memory and disk based storage managers and a
+ robust implementation of an R*-tree, an MVR-tree and a TPR-tree.
+ .
+ This package contains the SpatialIndex shared library for C.
+
+Package: libspatialindex-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libspatialindex4v5 (= ${binary:Version}),
+         libspatialindex-c4v5 (= ${binary:Version}),
+         ${misc:Depends}
+Recommends: pkg-config
+Description: General framework for developing spatial indices - development files
+ Spatialindex is a C++ library that provides a framework for
+ developing spatial indices. Currently it defines generic interfaces,
+ provides simple main memory and disk based storage managers and a
+ robust implementation of an R*-tree, an MVR-tree and a TPR-tree.
+ .
+ This package contains the development files to build third
+ parties programs.
+
+Package: libspatialindex-dbg
+Architecture: any
+Multi-Arch: same
+Section: debug
+Priority: extra
+Depends: libspatialindex4v5 (= ${binary:Version}),
+         libspatialindex-c4v5 (= ${binary:Version}),
+         ${misc:Depends}
+Breaks: libspatialindex4-dbg (<< 1.8.5-2)
+Replaces: libspatialindex4-dbg (<< 1.8.5-2)
+Description: General framework for developing spatial indices - debugging symbols
+ Spatialindex is a C++ library that provides a framework for
+ developing spatial indices. Currently it defines generic interfaces,
+ provides simple main memory and disk based storage managers and a
+ robust implementation of an R*-tree, an MVR-tree and a TPR-tree.
+ .
+ This package contains debugging symbols for the libraries.
+

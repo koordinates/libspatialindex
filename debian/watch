@@ -1,0 +1,6 @@
+version=3
+opts=\
+dversionmangle=s/\+(debian|dfsg|ds|deb)\d*$//,\
+uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha)\d*)$/$1~$2/;s/RC/rc/ \
+http://download.osgeo.org/libspatialindex/ \
+spatialindex(?:-src)?-(\d.*)\.(?:tgz|tar\.(?:gz|bz2|xz))

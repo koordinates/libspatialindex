@@ -1,0 +1,102 @@
+Description: Update buildsystem for clean autoreconf.
+Author: Bas Couwenberg <sebastic@debian.org>
+Last-Update: 2013-01-10
+--- a/src/capi/Makefile.am
++++ b/src/capi/Makefile.am
+@@ -1,6 +1,6 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_LTLIBRARIES = libsidxc.la
+-INCLUDES = -I../../include -I../../include/capi
++AM_CPPFLAGS = -I../../include -I../../include/capi
+ libsidxc_la_SOURCES =	BoundsQuery.cc \
+ 						CountVisitor.cc \
+ 						CustomStorage.cc \
+--- a/src/mvrtree/Makefile.am
++++ b/src/mvrtree/Makefile.am
+@@ -1,4 +1,4 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_LTLIBRARIES = libmvrtree.la
+-INCLUDES = -I../../include 
++AM_CPPFLAGS = -I../../include
+ libmvrtree_la_SOURCES = Index.cc Leaf.cc Node.cc MVRTree.cc Statistics.cc Index.h Leaf.h MVRTree.h Node.h PointerPoolNode.h Statistics.h
+--- a/src/rtree/Makefile.am
++++ b/src/rtree/Makefile.am
+@@ -1,4 +1,4 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_LTLIBRARIES = librtree.la
+-INCLUDES = -I../../include 
++AM_CPPFLAGS = -I../../include
+ librtree_la_SOURCES = BulkLoader.cc Index.cc Leaf.cc Node.cc RTree.cc Statistics.cc BulkLoader.h Index.h Leaf.h Node.h PointerPoolNode.h RTree.h Statistics.h
+--- a/src/spatialindex/Makefile.am
++++ b/src/spatialindex/Makefile.am
+@@ -1,4 +1,4 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_LTLIBRARIES = liblibrary.la
+-INCLUDES = -I../../include
++AM_CPPFLAGS = -I../../include
+ liblibrary_la_SOURCES = Point.cc Region.cc LineSegment.cc MovingPoint.cc MovingRegion.cc TimePoint.cc TimeRegion.cc SpatialIndexImpl.cc
+--- a/src/storagemanager/Makefile.am
++++ b/src/storagemanager/Makefile.am
+@@ -1,4 +1,4 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_LTLIBRARIES = libstoragemanager.la
+-INCLUDES = -I../../include 
++AM_CPPFLAGS = -I../../include
+ libstoragemanager_la_SOURCES = Buffer.h Buffer.cc DiskStorageManager.cc MemoryStorageManager.cc RandomEvictionsBuffer.cc DiskStorageManager.h MemoryStorageManager.h RandomEvictionsBuffer.h
+--- a/src/tools/Makefile.am
++++ b/src/tools/Makefile.am
+@@ -1,6 +1,6 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_LTLIBRARIES = libtools.la
+-INCLUDES = -I../../include
++AM_CPPFLAGS = -I../../include
+ libtools_la_SOURCES = Tools.cc 
+ 
+ if !RAND_IS_CONFIG
+--- a/src/tprtree/Makefile.am
++++ b/src/tprtree/Makefile.am
+@@ -1,4 +1,4 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_LTLIBRARIES = libtprtree.la
+-INCLUDES = -I../../include 
++AM_CPPFLAGS = -I../../include
+ libtprtree_la_SOURCES = Index.cc Leaf.cc Node.cc TPRTree.cc Statistics.cc Leaf.h Index.h Node.h PointerPoolNode.h Statistics.h TPRTree.h 
+--- a/test/geometry/Makefile.am
++++ b/test/geometry/Makefile.am
+@@ -1,5 +1,5 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_PROGRAMS = Intersection
+-INCLUDES = -I../../include
++AM_CPPFLAGS = -I../../include
+ Intersection_SOURCES = Intersection.cc
+ Intersection_LDADD = ../../libspatialindex.la
+--- a/test/mvrtree/Makefile.am
++++ b/test/mvrtree/Makefile.am
+@@ -1,6 +1,6 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_PROGRAMS = Generator Exhaustive MVRTreeLoad MVRTreeQuery
+-INCLUDES = -I../../include 
++AM_CPPFLAGS = -I../../include
+ Generator_SOURCES = Generator.cc 
+ Generator_LDADD = ../../libspatialindex.la
+ Exhaustive_SOURCES = Exhaustive.cc 
+--- a/test/rtree/Makefile.am
++++ b/test/rtree/Makefile.am
+@@ -1,6 +1,6 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_PROGRAMS = Generator Exhaustive RTreeLoad RTreeQuery RTreeBulkLoad
+-INCLUDES = -I../../include 
++AM_CPPFLAGS = -I../../include
+ Generator_SOURCES = Generator.cc 
+ Generator_LDADD = ../../libspatialindex.la
+ Exhaustive_SOURCES = Exhaustive.cc 
+--- a/test/tprtree/Makefile.am
++++ b/test/tprtree/Makefile.am
+@@ -1,6 +1,6 @@
+ ## Makefile.am -- Process this file with automake to produce Makefile.in
+ noinst_PROGRAMS = Generator Exhaustive TPRTreeLoad TPRTreeQuery
+-INCLUDES = -I../../include 
++AM_CPPFLAGS = -I../../include
+ Generator_SOURCES = RandomGenerator.cc Generator.cc RandomGenerator.h
+ Generator_LDADD = ../../libspatialindex.la
+ Exhaustive_SOURCES = Exhaustive.cc 

@@ -1,0 +1,326 @@
+# SymbolsHelper-Confirmed: 1.8.5 alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc sparc64 x32
+libspatialindex_c.so.4 #PACKAGE# #MINVER#
+ Error_GetErrorCount@Base 1.8.1
+ Error_GetLastErrorMethod@Base 1.8.1
+ Error_GetLastErrorMsg@Base 1.8.1
+ Error_GetLastErrorNum@Base 1.8.1
+ Error_Pop@Base 1.8.1
+ Error_PushError@Base 1.8.1
+ Error_Reset@Base 1.8.1
+ IndexItem_Destroy@Base 1.8.1
+ IndexItem_GetBounds@Base 1.8.1
+ IndexItem_GetData@Base 1.8.1
+ IndexItem_GetID@Base 1.8.1
+ IndexProperty_Create@Base 1.8.1
+ IndexProperty_Destroy@Base 1.8.1
+ IndexProperty_GetBufferingCapacity@Base 1.8.1
+ IndexProperty_GetCustomStorageCallbacks@Base 1.8.1
+ IndexProperty_GetCustomStorageCallbacksSize@Base 1.8.1
+ IndexProperty_GetDimension@Base 1.8.1
+ IndexProperty_GetEnsureTightMBRs@Base 1.8.1
+ IndexProperty_GetFileName@Base 1.8.1
+ IndexProperty_GetFileNameExtensionDat@Base 1.8.1
+ IndexProperty_GetFileNameExtensionIdx@Base 1.8.1
+ IndexProperty_GetFillFactor@Base 1.8.1
+ IndexProperty_GetIndexCapacity@Base 1.8.1
+ IndexProperty_GetIndexID@Base 1.8.1
+ IndexProperty_GetIndexPoolCapacity@Base 1.8.1
+ IndexProperty_GetIndexStorage@Base 1.8.1
+ IndexProperty_GetIndexType@Base 1.8.1
+ IndexProperty_GetIndexVariant@Base 1.8.1
+ IndexProperty_GetLeafCapacity@Base 1.8.1
+ IndexProperty_GetLeafPoolCapacity@Base 1.8.1
+ IndexProperty_GetNearMinimumOverlapFactor@Base 1.8.1
+ IndexProperty_GetOverwrite@Base 1.8.1
+ IndexProperty_GetPagesize@Base 1.8.1
+ IndexProperty_GetPointPoolCapacity@Base 1.8.1
+ IndexProperty_GetRegionPoolCapacity@Base 1.8.1
+ IndexProperty_GetReinsertFactor@Base 1.8.1
+ IndexProperty_GetResultSetLimit@Base 1.8.3
+ IndexProperty_GetSplitDistributionFactor@Base 1.8.1
+ IndexProperty_GetTPRHorizon@Base 1.8.1
+ IndexProperty_GetWriteThrough@Base 1.8.1
+ IndexProperty_SetBufferingCapacity@Base 1.8.1
+ IndexProperty_SetCustomStorageCallbacks@Base 1.8.1
+ IndexProperty_SetCustomStorageCallbacksSize@Base 1.8.1
+ IndexProperty_SetDimension@Base 1.8.1
+ IndexProperty_SetEnsureTightMBRs@Base 1.8.1
+ IndexProperty_SetFileName@Base 1.8.1
+ IndexProperty_SetFileNameExtensionDat@Base 1.8.1
+ IndexProperty_SetFileNameExtensionIdx@Base 1.8.1
+ IndexProperty_SetFillFactor@Base 1.8.1
+ IndexProperty_SetIndexCapacity@Base 1.8.1
+ IndexProperty_SetIndexID@Base 1.8.1
+ IndexProperty_SetIndexPoolCapacity@Base 1.8.1
+ IndexProperty_SetIndexStorage@Base 1.8.1
+ IndexProperty_SetIndexType@Base 1.8.1
+ IndexProperty_SetIndexVariant@Base 1.8.1
+ IndexProperty_SetLeafCapacity@Base 1.8.1
+ IndexProperty_SetLeafPoolCapacity@Base 1.8.1
+ IndexProperty_SetNearMinimumOverlapFactor@Base 1.8.1
+ IndexProperty_SetOverwrite@Base 1.8.1
+ IndexProperty_SetPagesize@Base 1.8.1
+ IndexProperty_SetPointPoolCapacity@Base 1.8.1
+ IndexProperty_SetRegionPoolCapacity@Base 1.8.1
+ IndexProperty_SetReinsertFactor@Base 1.8.1
+ IndexProperty_SetResultSetLimit@Base 1.8.3
+ IndexProperty_SetSplitDistributionFactor@Base 1.8.1
+ IndexProperty_SetTPRHorizon@Base 1.8.1
+ IndexProperty_SetWriteThrough@Base 1.8.1
+ Index_ClearBuffer@Base 1.8.1
+ Index_Create@Base 1.8.1
+ Index_CreateWithStream@Base 1.8.1
+ Index_DeleteData@Base 1.8.1
+ Index_DeleteMVRData@Base 1.8.3
+ Index_DeleteTPData@Base 1.8.3
+ Index_Destroy@Base 1.8.1
+ Index_DestroyObjResults@Base 1.8.1
+ Index_Flush@Base 1.8.3
+ Index_Free@Base 1.8.1
+ Index_GetBounds@Base 1.8.1
+ Index_GetLeaves@Base 1.8.1
+ Index_GetProperties@Base 1.8.1
+ Index_GetResultSetLimit@Base 1.8.3
+ Index_GetResultSetOffset@Base 1.8.3
+ Index_InsertData@Base 1.8.1
+ Index_InsertMVRData@Base 1.8.3
+ Index_InsertTPData@Base 1.8.3
+ Index_Intersects_count@Base 1.8.1
+ Index_Intersects_id@Base 1.8.1
+ Index_Intersects_obj@Base 1.8.1
+ Index_IsValid@Base 1.8.1
+ Index_MVRIntersects_count@Base 1.8.3
+ Index_MVRIntersects_id@Base 1.8.3
+ Index_MVRIntersects_obj@Base 1.8.3
+ Index_MVRNearestNeighbors_id@Base 1.8.3
+ Index_MVRNearestNeighbors_obj@Base 1.8.3
+ Index_NearestNeighbors_id@Base 1.8.1
+ Index_NearestNeighbors_obj@Base 1.8.1
+ Index_SegmentIntersects_count@Base 1.8.1
+ Index_SegmentIntersects_id@Base 1.8.1
+ Index_SegmentIntersects_obj@Base 1.8.1
+ Index_SetResultSetLimit@Base 1.8.3
+ Index_SetResultSetOffset@Base 1.8.3
+ Index_TPIntersects_count@Base 1.8.3
+ Index_TPIntersects_id@Base 1.8.3
+ Index_TPIntersects_obj@Base 1.8.3
+ Index_TPNearestNeighbors_id@Base 1.8.3
+ Index_TPNearestNeighbors_obj@Base 1.8.3
+ SIDX_DeleteBuffer@Base 1.8.1
+ SIDX_NewBuffer@Base 1.8.1
+ SIDX_Version@Base 1.8.1
+ _Z11GetDefaultsv@Base 1.8.1
+ _Z11get_resultsPKN12SpatialIndex5INodeE@Base 1.8.1
+ (subst)_Z18Page_ResultSet_IdsR9IdVisitorPP{int64_t}{int64_t}{int64_t}P{uint64_t}@Base 1.8.3
+ (subst)_Z18Page_ResultSet_ObjR10ObjVisitorPPPN12SpatialIndex5IDataE{int64_t}{int64_t}P{uint64_t}@Base 1.8.3
+ _ZN10DataStream4sizeEv@Base 1.8.1
+ _ZN10DataStream6rewindEv@Base 1.8.1
+ _ZN10DataStream7getNextEv@Base 1.8.1
+ _ZN10DataStream7hasNextEv@Base 1.8.1
+ _ZN10DataStream8readDataEv@Base 1.8.1
+ (arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZN10DataStreamC1EPFiPlPPdS2_PjPPKhS3_E@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN10DataStreamC1EPFiPxPPdS2_PjPPKhS3_E@Base 1.8.5
+ (arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZN10DataStreamC2EPFiPlPPdS2_PjPPKhS3_E@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN10DataStreamC2EPFiPxPPdS2_PjPPKhS3_E@Base 1.8.5
+ _ZN10DataStreamD0Ev@Base 1.8.1
+ _ZN10DataStreamD1Ev@Base 1.8.1
+ _ZN10DataStreamD2Ev@Base 1.8.1
+ _ZN10ObjVisitor9visitDataERKN12SpatialIndex5IDataE@Base 1.8.1
+ _ZN10ObjVisitor9visitDataERSt6vectorIPKN12SpatialIndex5IDataESaIS4_EE@Base 1.8.1
+ _ZN10ObjVisitor9visitNodeERKN12SpatialIndex5INodeE@Base 1.8.1
+ _ZN10ObjVisitorC1Ev@Base 1.8.1
+ _ZN10ObjVisitorC2Ev@Base 1.8.1
+ _ZN10ObjVisitorD0Ev@Base 1.8.1
+ _ZN10ObjVisitorD1Ev@Base 1.8.1
+ _ZN10ObjVisitorD2Ev@Base 1.8.1
+ (arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZN11BoundsQuery12getNextEntryERKN12SpatialIndex6IEntryERlRb@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN11BoundsQuery12getNextEntryERKN12SpatialIndex6IEntryERxRb@Base 1.8.5
+ _ZN11BoundsQueryC1Ev@Base 1.8.1
+ _ZN11BoundsQueryC2Ev@Base 1.8.1
+ _ZN11BoundsQueryD0Ev@Base 1.8.1
+ _ZN11BoundsQueryD1Ev@Base 1.8.1
+ _ZN11BoundsQueryD2Ev@Base 1.8.1
+ _ZN12CountVisitor9visitDataERKN12SpatialIndex5IDataE@Base 1.8.1
+ _ZN12CountVisitor9visitDataERSt6vectorIPKN12SpatialIndex5IDataESaIS4_EE@Base 1.8.1
+ _ZN12CountVisitor9visitNodeERKN12SpatialIndex5INodeE@Base 1.8.1
+ _ZN12CountVisitorC1Ev@Base 1.8.1
+ _ZN12CountVisitorC2Ev@Base 1.8.1
+ _ZN12CountVisitorD0Ev@Base 1.8.1
+ _ZN12CountVisitorD1Ev@Base 1.8.1
+ _ZN12CountVisitorD2Ev@Base 1.8.1
+ (arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZN12SpatialIndex14StorageManager20CustomStorageManager13loadByteArrayElRjPPh@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN12SpatialIndex14StorageManager20CustomStorageManager13loadByteArrayExRjPPh@Base 1.8.5
+ (arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZN12SpatialIndex14StorageManager20CustomStorageManager14storeByteArrayERljPKh@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN12SpatialIndex14StorageManager20CustomStorageManager14storeByteArrayERxjPKh@Base 1.8.5
+ (arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZN12SpatialIndex14StorageManager20CustomStorageManager15deleteByteArrayEl@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN12SpatialIndex14StorageManager20CustomStorageManager15deleteByteArrayEx@Base 1.8.5
+ _ZN12SpatialIndex14StorageManager20CustomStorageManager5flushEv@Base 1.8.1
+ _ZN12SpatialIndex14StorageManager20CustomStorageManagerC1ERN5Tools11PropertySetE@Base 1.8.1
+ _ZN12SpatialIndex14StorageManager20CustomStorageManagerC2ERN5Tools11PropertySetE@Base 1.8.1
+ _ZN12SpatialIndex14StorageManager20CustomStorageManagerD0Ev@Base 1.8.1
+ _ZN12SpatialIndex14StorageManager20CustomStorageManagerD1Ev@Base 1.8.1
+ _ZN12SpatialIndex14StorageManager20CustomStorageManagerD2Ev@Base 1.8.1
+ _ZN12SpatialIndex14StorageManager26returnCustomStorageManagerERN5Tools11PropertySetE@Base 1.8.1
+ _ZN12SpatialIndex20InvalidPageExceptionD0Ev@Base 1.8.1
+ _ZN12SpatialIndex20InvalidPageExceptionD1Ev@Base 1.8.1
+ _ZN12SpatialIndex20InvalidPageExceptionD2Ev@Base 1.8.1
+ (arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZN15LeafQueryResult6SetIDsERSt6vectorIlSaIlEE@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN15LeafQueryResult6SetIDsERSt6vectorIxSaIxEE@Base 1.8.5
+ _ZN15LeafQueryResult9SetBoundsEPKN12SpatialIndex6RegionE@Base 1.8.1
+ _ZN15LeafQueryResultC1ERKS_@Base 1.8.1
+ _ZN15LeafQueryResultC2ERKS_@Base 1.8.1
+ _ZN15LeafQueryResultD1Ev@Base 1.8.1
+ _ZN15LeafQueryResultD2Ev@Base 1.8.1
+ _ZN15LeafQueryResultaSERKS_@Base 1.8.1
+ _ZN5ErrorC1ERKS_@Base 1.8.1
+ (arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZN5ErrorC1EiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_@Base 1.8.5
+ (arch=!amd64)_ZN5ErrorC1EiRKSsS1_@Base 1.8.5
+ _ZN5ErrorC2ERKS_@Base 1.8.1
+ (arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZN5ErrorC2EiRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_@Base 1.8.5
+ (arch=!amd64)_ZN5ErrorC2EiRKSsS1_@Base 1.8.5
+ (arch=!amd64)_ZN5ErrorD1Ev@Base 1.8.5
+ (arch=!amd64)_ZN5ErrorD2Ev@Base 1.8.5
+ _ZN5ErroraSERKS_@Base 1.8.1
+ _ZN5Index10InitializeEv@Base 1.8.1
+ _ZN5Index11CreateIndexEv@Base 1.8.1
+ _ZN5Index12GetIndexTypeEv@Base 1.8.1
+ _ZN5Index12SetIndexTypeE11RTIndexType@Base 1.8.1
+ _ZN5Index13CreateStorageEv@Base 1.8.1
+ _ZN5Index15GetIndexStorageEv@Base 1.8.1
+ _ZN5Index15GetIndexVariantEv@Base 1.8.1
+ _ZN5Index15SetIndexStorageE13RTStorageType@Base 1.8.1
+ _ZN5Index15SetIndexVariantE13RTStorageType@Base 1.8.1
+ _ZN5Index17CreateIndexBufferERN12SpatialIndex15IStorageManagerE@Base 1.8.1
+ _ZN5Index17GetResultSetLimitEv@Base 1.8.3
+ (subst)_ZN5Index17SetResultSetLimitE{int64_t}@Base 1.8.3
+ _ZN5Index18GetResultSetOffsetEv@Base 1.8.3
+ (subst)_ZN5Index18SetResultSetOffsetE{int64_t}@Base 1.8.3
+ _ZN5Index5SetupEv@Base 1.8.1
+ _ZN5Index5flushEv@Base 1.8.3
+ _ZN5IndexC1ERKN5Tools11PropertySetE@Base 1.8.5
+ _ZN5IndexC1ERKN5Tools11PropertySetEPFiPlPPdS6_PjPPKhS7_E@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN5IndexC1ERKN5Tools11PropertySetEPFiPxPPdS6_PjPPKhS7_E@Base 1.8.5
+ _ZN5IndexC2ERKN5Tools11PropertySetE@Base 1.8.5
+ _ZN5IndexC2ERKN5Tools11PropertySetEPFiPlPPdS6_PjPPKhS7_E@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN5IndexC2ERKN5Tools11PropertySetEPFiPxPPdS6_PjPPKhS7_E@Base 1.8.5
+ _ZN5IndexD1Ev@Base 1.8.1
+ _ZN5IndexD2Ev@Base 1.8.1
+ _ZN5Tools21IllegalStateExceptionD0Ev@Base 1.8.1
+ _ZN5Tools21IllegalStateExceptionD1Ev@Base 1.8.1
+ _ZN5Tools21IllegalStateExceptionD2Ev@Base 1.8.1
+ _ZN5Tools21NotSupportedExceptionD0Ev@Base 1.8.1
+ _ZN5Tools21NotSupportedExceptionD1Ev@Base 1.8.1
+ _ZN5Tools21NotSupportedExceptionD2Ev@Base 1.8.1
+ _ZN5Tools24IllegalArgumentExceptionD0Ev@Base 1.8.1
+ _ZN5Tools24IllegalArgumentExceptionD1Ev@Base 1.8.1
+ _ZN5Tools24IllegalArgumentExceptionD2Ev@Base 1.8.1
+ _ZN9IdVisitor9visitDataERKN12SpatialIndex5IDataE@Base 1.8.1
+ _ZN9IdVisitor9visitDataERSt6vectorIPKN12SpatialIndex5IDataESaIS4_EE@Base 1.8.1
+ _ZN9IdVisitor9visitNodeERKN12SpatialIndex5INodeE@Base 1.8.1
+ _ZN9IdVisitorC1Ev@Base 1.8.1
+ _ZN9IdVisitorC2Ev@Base 1.8.1
+ _ZN9IdVisitorD0Ev@Base 1.8.1
+ _ZN9IdVisitorD1Ev@Base 1.8.1
+ _ZN9IdVisitorD2Ev@Base 1.8.1
+ (arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZN9LeafQuery12getNextEntryERKN12SpatialIndex6IEntryERlRb@Base 1.8.5
+ (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZN9LeafQuery12getNextEntryERKN12SpatialIndex6IEntryERxRb@Base 1.8.5
+ _ZN9LeafQueryC1Ev@Base 1.8.1
+ _ZN9LeafQueryC2Ev@Base 1.8.1
+ _ZN9LeafQueryD0Ev@Base 1.8.1
+ _ZN9LeafQueryD1Ev@Base 1.8.1
+ _ZN9LeafQueryD2Ev@Base 1.8.1
+ _ZNK15LeafQueryResult6GetIDsEv@Base 1.8.1
+ _ZNK15LeafQueryResult9GetBoundsEv@Base 1.8.1
+ (optional=templinst|arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZNSt11_Deque_baseI5ErrorSaIS0_EE17_M_initialize_mapEj@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZNSt11_Deque_baseI5ErrorSaIS0_EE17_M_initialize_mapEm@Base 1.8.1
+ (optional=templinst)_ZNSt11_Deque_baseI5ErrorSaIS0_EED1Ev@Base 1.8.1
+ (optional=templinst)_ZNSt11_Deque_baseI5ErrorSaIS0_EED2Ev@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZNSt11_Deque_baseIlSaIlEE17_M_initialize_mapEm@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZNSt11_Deque_baseIlSaIlEED1Ev@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZNSt11_Deque_baseIlSaIlEED2Ev@Base 1.8.1
+ (optional=templinst|arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZNSt11_Deque_baseIxSaIxEE17_M_initialize_mapEj@Base 1.8.1
+ (optional=templinst|arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZNSt11_Deque_baseIxSaIxEED1Ev@Base 1.8.1
+ (optional=templinst|arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZNSt11_Deque_baseIxSaIxEED2Ev@Base 1.8.1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !hurd-i386 !i386 !kfreebsd-amd64 !kfreebsd-i386 !m68k !mips !mips64el !mipsel !powerpc !powerpcspe !ppc64 !ppc64el !s390x !sparc64 !x32)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 1.8.1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !hurd-i386 !i386 !kfreebsd-amd64 !kfreebsd-i386 !m68k !mips !mips64el !mipsel !powerpc !powerpcspe !ppc64 !ppc64el !s390x !sparc64 !x32)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 1.8.1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !hurd-i386 !i386 !kfreebsd-amd64 !kfreebsd-i386 !m68k !mips !mips64el !mipsel !powerpc !powerpcspe !ppc64 !ppc64el !s390x !sparc64 !x32)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 1.8.1
+ (optional=templinst)_ZNSt5dequeI5ErrorSaIS0_EE15_M_pop_back_auxEv@Base 1.8.1
+ (optional=templinst)_ZNSt5dequeI5ErrorSaIS0_EE16_M_push_back_auxERKS0_@Base 1.8.1
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !hurd-i386 !i386 !kfreebsd-amd64 !kfreebsd-i386 !m68k !mips !mips64el !mipsel !powerpc !powerpcspe !ppc64 !ppc64el !s390x !sparc64 !x32)_ZNSt5dequeI5ErrorSaIS0_EE19_M_destroy_data_auxESt15_Deque_iteratorIS0_RS0_PS0_ES6_@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZNSt5dequeI5ErrorSaIS0_EEC1ERKS2_@Base 1.8.5
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZNSt5dequeI5ErrorSaIS0_EEC2ERKS2_@Base 1.8.5
+ (optional=templinst)_ZNSt5dequeI5ErrorSaIS0_EED1Ev@Base 1.8.1
+ (optional=templinst)_ZNSt5dequeI5ErrorSaIS0_EED2Ev@Base 1.8.1
+ (optional=templinst|arch=arm64 ppc64el s390x)_ZNSt5dequeIlSaIlEE16_M_push_back_auxERKl@Base 1.8.5
+ (optional=templinst|arch=sparc)_ZNSt5dequeIxSaIxEE16_M_push_back_auxERKx@Base 1.8.1
+ (optional=templinst)_ZNSt5stackI5ErrorSt5dequeIS0_SaIS0_EEED1Ev@Base 1.8.1
+ (optional=templinst)_ZNSt5stackI5ErrorSt5dequeIS0_SaIS0_EEED2Ev@Base 1.8.1
+ (optional=templinst)_ZNSt6vectorI15LeafQueryResultSaIS0_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS0_S2_EERKS0_@Base 1.8.1
+ (optional=templinst)_ZNSt6vectorIPN12SpatialIndex5IDataESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZNSt6vectorIlSaIlEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPlS1_EERKl@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZNSt6vectorIlSaIlEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPlS1_EEmRKl@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 kfreebsd-amd64 mips64el ppc64 ppc64el s390x sparc64)_ZNSt6vectorImSaImEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPmS1_EERKm@Base 1.8.1
+ (optional=templinst|arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZNSt6vectorIxSaIxEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPxS1_EERKx@Base 1.8.1
+ (optional=templinst|arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZNSt6vectorIxSaIxEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPxS1_EEjRKx@Base 1.8.1
+ (optional=templinst|arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe sparc x32)_ZNSt6vectorIySaIyEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPyS1_EERKy@Base 1.8.1
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 1.8.5
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 1.8.5
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 1.8.5
+ (optional=templinst|arch=amd64)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_N5Tools7VariantEESt10_Select1stISA_ESt4lessIS5_ESaISA_EE7_M_copyINSG_11_Alloc_nodeEEEPSt13_Rb_tree_nodeISA_EPKSK_PSt18_Rb_tree_node_baseRT_@Base 1.8.5
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_N5Tools7VariantEESt10_Select1stISA_ESt4lessIS5_ESaISA_EE7_M_copyINSG_11_Alloc_nodeEEEPSt13_Rb_tree_nodeISA_EPKSK_SL_RT_@Base 1.8.5
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390x sparc64 x32)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_N5Tools7VariantEESt10_Select1stISA_ESt4lessIS5_ESaISA_EE8_M_eraseEPSt13_Rb_tree_nodeISA_E@Base 1.8.5
+ (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsN5Tools7VariantEESt10_Select1stIS4_ESt4lessISsESaIS4_EE7_M_copyEPKSt13_Rb_tree_nodeIS4_EPSC_@Base 1.8.5
+ (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsN5Tools7VariantEESt10_Select1stIS4_ESt4lessISsESaIS4_EE8_M_eraseEPSt13_Rb_tree_nodeIS4_E@Base 1.8.5
+ (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !hurd-i386 !i386 !kfreebsd-amd64 !kfreebsd-i386 !m68k !mips !mips64el !mipsel !powerpc !powerpcspe !ppc64 !ppc64el !s390x !sparc64 !x32)_ZSt8_DestroyISt15_Deque_iteratorI5ErrorRS1_PS1_EEvT_S5_@Base 1.8.1
+ _ZTI10DataStream@Base 1.8.1
+ _ZTI10ObjVisitor@Base 1.8.1
+ _ZTI11BoundsQuery@Base 1.8.1
+ _ZTI12CountVisitor@Base 1.8.1
+ _ZTI9IdVisitor@Base 1.8.1
+ _ZTI9LeafQuery@Base 1.8.1
+ _ZTIN12SpatialIndex11IDataStreamE@Base 1.8.1
+ _ZTIN12SpatialIndex14IQueryStrategyE@Base 1.8.1
+ _ZTIN12SpatialIndex14StorageManager20CustomStorageManagerE@Base 1.8.1
+ _ZTIN12SpatialIndex15IStorageManagerE@Base 1.8.1
+ _ZTIN12SpatialIndex5IDataE@Base 1.8.1
+ _ZTIN12SpatialIndex5INodeE@Base 1.8.1
+ _ZTIN12SpatialIndex6IEntryE@Base 1.8.1
+ _ZTIN12SpatialIndex6IShapeE@Base 1.8.1
+ _ZTIN12SpatialIndex8IVisitorE@Base 1.8.1
+ _ZTIN5Tools13IObjectStreamE@Base 1.8.1
+ _ZTIN5Tools13ISerializableE@Base 1.8.1
+ _ZTIN5Tools7IObjectE@Base 1.8.1
+ _ZTIN5Tools9ExceptionE@Base 1.8.1
+ _ZTS10DataStream@Base 1.8.1
+ _ZTS10ObjVisitor@Base 1.8.1
+ _ZTS11BoundsQuery@Base 1.8.1
+ _ZTS12CountVisitor@Base 1.8.1
+ _ZTS9IdVisitor@Base 1.8.1
+ _ZTS9LeafQuery@Base 1.8.1
+ _ZTSN12SpatialIndex11IDataStreamE@Base 1.8.1
+ _ZTSN12SpatialIndex14IQueryStrategyE@Base 1.8.1
+ _ZTSN12SpatialIndex14StorageManager20CustomStorageManagerE@Base 1.8.1
+ _ZTSN12SpatialIndex15IStorageManagerE@Base 1.8.1
+ _ZTSN12SpatialIndex5IDataE@Base 1.8.1
+ _ZTSN12SpatialIndex5INodeE@Base 1.8.1
+ _ZTSN12SpatialIndex6IEntryE@Base 1.8.1
+ _ZTSN12SpatialIndex6IShapeE@Base 1.8.1
+ _ZTSN12SpatialIndex8IVisitorE@Base 1.8.1
+ _ZTSN5Tools13IObjectStreamE@Base 1.8.1
+ _ZTSN5Tools13ISerializableE@Base 1.8.1
+ _ZTSN5Tools7IObjectE@Base 1.8.1
+ _ZTSN5Tools9ExceptionE@Base 1.8.1
+ _ZTV10DataStream@Base 1.8.1
+ _ZTV10ObjVisitor@Base 1.8.1
+ _ZTV11BoundsQuery@Base 1.8.1
+ _ZTV12CountVisitor@Base 1.8.1
+ _ZTV9IdVisitor@Base 1.8.1
+ _ZTV9LeafQuery@Base 1.8.1
+ (arch=!amd64)_ZTVN12SpatialIndex11IDataStreamE@Base 1.8.5
+ (arch=!amd64)_ZTVN12SpatialIndex14IQueryStrategyE@Base 1.8.5
+ _ZTVN12SpatialIndex14StorageManager20CustomStorageManagerE@Base 1.8.1
+ (arch=!amd64)_ZTVN12SpatialIndex15IStorageManagerE@Base 1.8.5
+ (arch=!amd64)_ZTVN12SpatialIndex8IVisitorE@Base 1.8.5
+ (arch=!amd64)_ZTVN5Tools13IObjectStreamE@Base 1.8.5
+ _ZTVN5Tools13ISerializableE@Base 1.8.5
+ (arch=!amd64)_ZTVN5Tools9ExceptionE@Base 1.8.5

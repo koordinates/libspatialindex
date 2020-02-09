@@ -1,0 +1,16 @@
+Description: Update pkg-config to include linking libspatialindex and remove build flags.
+Author: Bas Couwenberg <sebastic@debian.org>
+Bug-Debian: http://bugs.debian.org/679690
+Bug-Debian: http://bugs.debian.org/735039
+Last-Update: 2014-01-12
+--- a/src/libspatialindex.pc.in
++++ b/src/libspatialindex.pc.in
+@@ -7,6 +7,6 @@ Name: libspatialindex
+ Description: Generic C/C++ library for spatial indexing
+ Requires: 
+ Version: @PACKAGE_VERSION@
+-Libs: -L@libdir@
+-Cflags: -I${includedir}/spatialindex @CFLAGS@ @CPPFLAGS@
++Libs: -L@libdir@ -lspatialindex
++Cflags: -I${includedir}/spatialindex
+ 
